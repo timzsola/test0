@@ -1,0 +1,557 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+
+
+
+
+/* eric css reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	/*不累+邊框與內距 RWD一定會加*/
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	font-family: 'Noto Sans TC', sans-serif;
+	background: #F2D8CE;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 共用 */
+img {
+	display: block;
+	width: 100%;
+}
+
+/* * {
+	outline: 1px solid black;
+} */
+
+
+/* 頁首區 */
+#topbar {
+	position: fixed;
+	/* position會將寬度轉換為內容等寬 */
+	/* top: 0;
+	left: 0; */
+	z-index: 20;
+	/*讓topbar置頂*/
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	/* 齊頭 */
+	/* padding: 20px; */
+	/* background-color: #F2D8CE; */
+
+	/* 玻璃擬態(毛玻璃)效果 */
+	background-color: rgba(232, 207, 193, 0.5);
+	backdrop-filter: blur(5px);
+	/* 必須搭配背景半透明 */
+	border: 1px rgba(255, 255, 255, 0.1);
+	/* 修改input邊框的預設樣式 */
+	/* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(255, 255, 255, 0.3); */
+}
+
+
+
+
+
+
+#topbar ul {
+	display: flex;
+	justify-content: flex-end;
+
+}
+
+
+
+.intro {
+	display: flex;
+	align-items: center;
+}
+
+
+
+.intro div {
+	display: flex;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+}
+
+
+
+
+.logo {
+	width: 220px;
+}
+
+
+
+.icon li {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+
+.icon a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+
+}
+
+
+.icon-avatar {
+	background-image: url("../img/avatar2.png");
+	background-size: cover;
+
+}
+
+.icon-grocery {
+	background-image: url("../img/grocery-store2.png");
+	background-size: cover;
+}
+
+.icon-avatar:hover {
+	background-image: url("../img/avatar1.png");
+}
+
+.icon-grocery:hover {
+	background-image: url("../img/grocery-store1.png");
+}
+
+
+.menu {
+	padding: 10px;
+}
+
+
+.menu a {
+	display: block;
+	text-decoration: none;
+	/* 取消a預設底線 */
+	color: black;
+	/* 修改瀏覽器預設的a字色 */
+	padding: 10px 18px;
+
+}
+
+.menu li::after {
+	content: "";
+	display: block;
+	width: 0%;
+	height: 2px;
+	background-color: #735C48;
+}
+
+.menu li:hover::after {
+	width: 100%;
+	transition: .35s;
+}
+
+/* 主要內容共用 */
+main>* {
+	/* 設定main第一層的所有元素 */
+	height: 100vh;
+}
+
+/* * {
+	outline: 2px solid black;
+} */
+
+section {
+	display: flex;
+	flex-direction: column;
+	/* 設定主軸方向為垂直 */
+	justify-content: center;
+	/* 設定主軸(垂直)置中 */
+	align-items: center;
+	/* 設定副軸(水平)方向置中 */
+}
+
+/* banner區 */
+
+.topbgc {
+	background-image: url(../img/forest1.jpg);
+	height: 65vh;
+}
+
+.banner0 .floor1 {
+	position: absolute;
+	width: 40%;
+	top: 0;
+	left: 27.8rem;
+}
+
+.banner0 .floor2 {
+	position: absolute;
+	width: 15%;
+	top: 3rem;
+	left: 59.8rem;
+}
+
+.banner0 .floor3 {
+	position: absolute;
+	width: 15%;
+	top: 14rem;
+	left: 53.8rem;
+}
+
+.img1 {
+	position: absolute;
+	width: 15%;
+	top: 4rem;
+	left: 5rem;
+}
+
+.img2 {
+	position: absolute;
+	width: 15%;
+	top: 25rem;
+	left: 5rem;
+
+}
+
+.img3 {
+	position: absolute;
+	width: 15%;
+	top: 21rem;
+	left: 75rem;
+}
+
+.btn {
+	position: absolute;
+	top: 462px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	height: 68px;
+
+}
+
+.btn a {
+	width: 362px;
+	height: 50px;
+	margin: 0 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 30px;
+	padding: 10px;
+	background-color: #F2D8CE;
+	color: #000;
+}
+
+.btn a:hover {
+	background-color: #BFA799;
+}
+
+/* 風格設計主內容 */
+
+h1 {
+
+	font-size: 50px;
+    line-height: 150px;
+
+}
+
+p {
+	font-size: 20px;
+	line-height: 50px;
+}
+
+.stylebox01 {
+	display: flex;
+	height: 550px;
+	width: 1050px;
+	background-color: white;	
+	margin-top: 16px;
+	position: relative;
+}
+
+
+.leftbox01{
+	position: absolute;
+	top: 208px;
+    left: 330px;
+}
+
+.btnbuy01{
+	background-image: url(/img/button001.png);
+    border-radius: 20px;
+    font-size: 20px;
+    color: #735C48;
+    font-weight: bold;
+    border: none;
+	margin-left: 35px;
+    margin-top: 30px;
+    width: 163px;
+    height: 50px;
+}
+
+.p1{
+	height: 150vh;
+}
+
+.stylebox02{
+		display: flex;
+	height: 550px;
+	width: 1050px;
+	background-color: white;	
+	margin-top: 20px;
+	position: relative;
+}
+
+.leftbox02{
+	position: absolute;
+	top: 208px;
+    left: 330px;
+}
+
+/* 頁尾區 */
+footer {
+	background-color: #735C48;
+	width: 100%;
+	/* 內距會包含背景顏色 */
+	/* text-align: center; */
+	display: flex;
+	/* padding: 10px; */
+}
+
+.footer-left {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+	/* justify-content: space-between; */
+}
+
+.footer-left a {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	color: wheat;
+}
+
+
+.footer-left img {
+	padding: 10px;
+	width: 200px;
+	height: 200px;
+}
+
+.footer-left ul {
+	display: flex;
+	flex-direction: column;
+	/* 設定主軸方向為垂直 */
+	justify-content: center;
+	/* 設定主軸(垂直)置中 */
+	align-items: center;
+}
+
+.footer-left li {
+	margin: 10px;
+	padding-left: 10px;
+	color: white;
+}
+
+.footer-right {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+
+}
+
+.ft-1 {
+
+	background: url("../img/footer2.png");
+	background-size: cover;
+	width: 100%;
+	height: 200px;
+
+}
+
+
+.ft-1 img {
+	display: block;
+	width: 800px;
+	height: 350px;
+}
+
+
+
+
+.ft-2 {
+	display: flex;
+	/* justify-content: space-between; */
+}
+
+.ft-add {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 600px;
+	height: 80px;
+}
+
+.ft-add p {
+	color: wheat;
+	text-align: center;
+
+}
+
+
+.ft-icon {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.ft-icon img {
+	padding: 10px;
+}
+
+#gotop {
+	display: none;
+
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 999;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: rgba(115, 92, 72, 0.7);
+
+	font-size: 2.2rem;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+}

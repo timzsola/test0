@@ -1,0 +1,119 @@
+#slideshow {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    margin: 0 auto;
+    /*设置在页面水平居中*/
+    overflow: hidden;
+    position: relative;
+}
+
+#slideshow img {
+    width: 100%;
+    height: 100vh;
+    /* background-size: cover; */
+    position: absolute;
+    /*图片采取绝对定位，均位于左上角，重叠在一起*/
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /*初始不透明度为0，图片都看不见*/
+    transition: opacity 1s linear;
+    /*--重点--定义一个关于透明度的transition*/
+}
+
+#slideshow img.active {
+    opacity: 1;
+    /*有active类的图片不透明度为1，即显示图片*/
+}
+
+/*-- 设置页码的样式 --*/
+#slideshow div {
+    /* position: absolute;
+    bottom: 10px;
+    left: 50%;
+    padding: 5px;
+    margin-left: -57.5px; */
+    /*水平居中，算出来宽度是115px*/
+    /* border-radius: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    text-align: center; */
+
+
+    width: 100%;
+    position: absolute;
+    bottom: 70px;
+    left: 20%;
+    text-align: center;
+
+}
+
+#slideshow span {
+    /* display: inline-block; */
+    /* float: left; */
+    /* width: 45px;
+    height: 45px;
+    border-radius: 45px; */
+    /*设置页码为圆形*/
+    /* margin: 0 15px;
+    background: white;
+    font-size: 15px;
+    text-align: center; */
+
+    display: inline-block;
+    width: 45px;
+    line-height: 45px;
+    /*当只有一行文本时height等于line-height*/
+    border-radius: 45px;
+    /*设置页码为圆形*/
+    margin: 0 15px;
+    background: white;
+    font-size: 20px;
+
+}
+
+#slideshow span.active {
+    color: white;
+    background: #735C48;
+}
+
+
+
+/*-- 设置左右按钮框的样式 --*/
+#slideshow p {
+    width: 30px;
+    line-height: 80px;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    /*设置垂直居中*/
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    /*设置鼠标*/
+    /*设置不能选择文本*/
+    -ms-user-select: none;
+    /*IE10*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    user-select: none;
+    display: none;
+}
+
+#slideshow p.left {
+    left: 0;
+}
+
+#slideshow p.right {
+    right: 0;
+}
+
+#slideshow:hover p {
+    display: block;
+}
+
+#slideshow p:hover {
+    background: rgba(0, 0, 0, 0.6);
+}

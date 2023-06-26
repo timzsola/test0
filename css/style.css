@@ -1,0 +1,709 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+
+
+
+
+/* eric css reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	/*不累+邊框與內距 RWD一定會加*/
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 共用 */
+img {
+	display: block;
+	width: 100%;
+}
+
+/* * {
+	outline: 1px solid black;
+} */
+
+
+/* 頁首區 */
+#topbar {
+	position: fixed;
+	/* position會將寬度轉換為內容等寬 */
+	/* top: 0;
+	left: 0; */
+	z-index: 20;
+	/*讓topbar置頂*/
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	/* 齊頭 */
+	/* padding: 20px; */
+	/* background-color: #F2D8CE; */
+
+	/* 玻璃擬態(毛玻璃)效果 */
+	background-color: rgba(232, 207, 193, 0.5);
+	backdrop-filter: blur(5px);
+	/* 必須搭配背景半透明 */
+	border: 1px rgba(255, 255, 255, 0.1);
+	/* 修改input邊框的預設樣式 */
+	/* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(255, 255, 255, 0.3); */
+}
+
+
+
+
+
+
+#topbar ul {
+	display: flex;
+	justify-content: flex-end;
+
+}
+
+
+
+.intro {
+	display: flex;
+	align-items: center;
+}
+
+
+
+.intro div {
+	display: flex;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+}
+
+
+
+
+.logo {
+	width: 220px;
+}
+
+
+
+.icon li {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+
+.icon a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+
+}
+
+
+.icon-avatar {
+	background-image: url("../img/avatar2.png");
+	background-size: cover;
+
+}
+
+.icon-grocery {
+	background-image: url("../img/grocery-store2.png");
+	background-size: cover;
+}
+
+.icon-avatar:hover {
+	background-image: url("../img/avatar1.png");
+}
+
+.icon-grocery:hover {
+	background-image: url("../img/grocery-store1.png");
+}
+
+
+.menu {
+	padding: 10px;
+}
+
+
+.menu a {
+	display: block;
+	text-decoration: none;
+	/* 取消a預設底線 */
+	color: black;
+	/* 修改瀏覽器預設的a字色 */
+	padding: 10px 18px;
+
+}
+
+.menu li::after {
+	content: "";
+	display: block;
+	width: 0%;
+	height: 2px;
+	background-color: #735C48;
+}
+
+.menu li:hover::after {
+	width: 100%;
+	transition: .35s;
+}
+
+/* 主要內容共用 */
+main>* {
+	/* 設定main第一層的所有元素 */
+	height: 100vh;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	/* 設定主軸方向為垂直 */
+	justify-content: center;
+	/* 設定主軸(垂直)置中 */
+	align-items: center;
+	/* 設定副軸(水平)方向置中 */
+}
+
+/* banner區 */
+
+
+
+/* production區 */
+#production {
+	background: url("../img/japanman.png");
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-start;
+
+
+}
+
+#production div {
+	width: 600px;
+	height: 50vh;
+	text-align: center;
+	margin-top: 100px;
+	margin-right: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 60px;
+	/* 玻璃擬態(毛玻璃)效果 */
+	background-color: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(5px);
+	/* 必須搭配背景半透明 */
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	/* 修改input邊框的預設樣式 */
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(255, 255, 255, 0.3);
+
+
+}
+
+#production div h2 {
+	width: 400px;
+	height: 14vh;
+	font-size: 30px;
+	text-align: center;
+	color: #88531E;
+	padding-top: 30px;
+
+
+	/* 玻璃擬態(毛玻璃)效果 */
+	background-color: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(5px);
+	/* 必須搭配背景半透明 */
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	/* 修改input邊框的預設樣式 */
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15), inset -1px -1px 1px rgba(255, 255, 255, 0.3);
+
+}
+
+
+/* 按鈕 */
+#production div button {
+	position: relative;
+	outline: none;
+	text-decoration: none;
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	height: 60px;
+	width: 210px;
+	opacity: 1;
+	background-image: url("../img/woodtext2.png");
+	border: 2px solid #F2D8CE;
+	margin-top: 10px;
+	font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+button a {
+	color: #88531E;
+	font-size: 20px;
+	letter-spacing: 0.7px;
+}
+
+button:hover {
+	animation: rotate 0.7s ease-in-out both;
+}
+
+button:hover a {
+	animation: storm 0.7s ease-in-out both;
+	animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+
+	25% {
+		transform: rotate(3deg) translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: rotate(-3deg) translate3d(0, 0, 0);
+	}
+
+	75% {
+		transform: rotate(1deg) translate3d(0, 0, 0);
+	}
+
+	100% {
+		transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+}
+
+@keyframes storm {
+	0% {
+		transform: translate3d(0, 0, 0) translateZ(0);
+	}
+
+	25% {
+		transform: translate3d(4px, 0, 0) translateZ(0);
+	}
+
+	50% {
+		transform: translate3d(-3px, 0, 0) translateZ(0);
+	}
+
+	75% {
+		transform: translate3d(2px, 0, 0) translateZ(0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0) translateZ(0);
+	}
+}
+
+
+
+
+
+
+
+
+/* 影片區 */
+#video {
+
+	background-image: url("../img/woodfloor02\ .jpg");
+	width: auto;
+	height: 100vh;
+	padding-top: 10vh;
+	padding-bottom: 20vh;
+
+}
+
+.videoview {
+	display: absolute;
+	text-align: center;
+
+}
+
+.title {
+	font-size: 80px;
+	margin-bottom: 30px;
+	color: #735C48;
+
+}
+
+/* 風格區 */
+#sty {
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	background-image: url("../img/woodtext4.png");
+	background-size: cover;
+	width: 100%;
+	height: 80vh;
+
+
+}
+
+.sty_title {
+	position: relative;
+}
+
+.sty_title img {
+	width: 70%;
+
+
+}
+
+.sty_title .bs {
+	position: absolute;
+	left: 44px;
+	top: -15vh;
+
+}
+
+.sty_title .news {
+	position: absolute;
+	left: 24px;
+	top: 4vh;
+	width: 90%;
+}
+
+
+
+
+
+
+
+.list_box {
+	width: 80%;
+	display: flex;
+	height: 80vh;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.list_item {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 10px;
+	width: 100%;
+	height: 80vh;
+	position: relative;
+}
+
+.list_item figure {
+	width: 100%;
+	margin-top: 6.25rem;
+
+}
+
+.list_item a {
+	position: absolute;
+	bottom: 15px;
+	text-decoration: none;
+}
+
+.list_item img {
+	border-radius: 15px;
+}
+
+
+.best {
+	display: flex;
+	width: 100%;
+	height: 18vh;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+
+}
+
+.best h2 {
+	font-size: 90px;
+	color: #735C48;
+}
+
+.best h3 {
+	font-size: 20px;
+	position: absolute;
+	right: 10px;
+	top: 100px;
+	color: #735C48;
+}
+
+.list_box button {
+	position: relative;
+	outline: none;
+	text-decoration: none;
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	height: 60px;
+	width: 210px;
+	opacity: 1;
+	background-image: url("../img/woodtext2.png");
+	border: 2px solid #F2D8CE;
+	margin-top: 10px;
+	font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+
+
+/* 頁尾區 */
+footer {
+	background-color: #735C48;
+	width: 100%;
+	/* 內距會包含背景顏色 */
+	/* text-align: center; */
+	display: flex;
+	/* padding: 10px; */
+}
+
+.footer-left {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+	/* justify-content: space-between; */
+}
+
+.footer-left a {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	color: wheat;
+}
+
+
+.footer-left img {
+	padding: 10px;
+	width: 200px;
+	height: 200px;
+}
+
+.footer-left ul {
+	display: flex;
+	flex-direction: column;
+	/* 設定主軸方向為垂直 */
+	justify-content: center;
+	/* 設定主軸(垂直)置中 */
+	align-items: center;
+}
+
+.footer-left li {
+	margin: 10px;
+	padding-left: 10px;
+	color: white;
+}
+
+.footer-right {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+
+}
+
+.ft-1 {
+
+	background: url("../img/footer2.png");
+	background-size: cover;
+	width: 100%;
+	height: 200px;
+
+}
+
+
+.ft-1 img {
+	display: block;
+	width: 800px;
+	height: 350px;
+}
+
+
+
+
+.ft-2 {
+	display: flex;
+	/* justify-content: space-between; */
+}
+
+.ft-add {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 600px;
+	height: 80px;
+}
+
+.ft-add p {
+	color: wheat;
+	text-align: center;
+
+}
+
+
+.ft-icon {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.ft-icon img {
+	padding: 10px;
+}
+
+#gotop {
+	display: none;
+
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 999;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: rgba(115, 92, 72, 0.7);
+
+	font-size: 2.2rem;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+}
